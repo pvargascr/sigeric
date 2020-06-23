@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+  <Resource id="sigedb" type="javax.sql.DataSource">#Tue Mar 31 04:20:51 CST 2020
+jdbcDriver=com.mysql.jdbc.Driver
+password=Varsandrey
+userName=root
+jdbcUrl=jdbc\:mysql\://localhost\:3307/sigericdb?zeroDateTimeBehavior\=convertToNull
+</Resource>
+</resources>

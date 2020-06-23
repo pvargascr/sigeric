@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="ActivoViewDlg" widgetVar="ActivoViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewActivoTitle}">
+            <h:form id="ActivoViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{activoController.selected != null}">
+                        <h:outputText value="#{bundle.ViewActivoLabel_idActivo}"/>
+                        <h:outputText value="#{activoController.selected.idActivo}" title="#{bundle.ViewActivoTitle_idActivo}"/>
+                        <h:outputText value="#{bundle.ViewActivoLabel_nombre}"/>
+                        <h:outputText value="#{activoController.selected.nombre}" title="#{bundle.ViewActivoTitle_nombre}"/>
+                        <h:outputText value="#{bundle.ViewActivoLabel_detalle}"/>
+                        <h:outputText value="#{activoController.selected.detalle}" title="#{bundle.ViewActivoTitle_detalle}"/>
+                        <h:outputText value="Fecha Compra"/>
+                        <h:outputText value="#{activoController.selected.fechaCompra}" title="#{bundle.ViewActivoTitle_fechaCompra}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="Valor de Compra"/>
+                        <h:outputText value="#{activoController.selected.valorCompra}" title="#{bundle.ViewActivoTitle_valorCompra}"/>
+                        <h:outputText value="Valor residual"/>
+                        <h:outputText value="#{activoController.selected.valorResidual}" title="#{bundle.ViewActivoTitle_valorResidual}"/>
+                        <h:outputText value="Vida útil"/>
+                        <h:outputText value="#{activoController.selected.vidaUtil}" title="#{bundle.ViewActivoTitle_vidaUtil}"/>
+                        <h:outputText value="#{bundle.ViewActivoLabel_estado}"/>
+                        <h:outputText value="#{activoController.selected.estado}" title="#{bundle.ViewActivoTitle_estado}"/>
+                        <h:outputText value="Marca"/>
+                        <h:outputText value="#{activoController.selected.idMarca.nombre}" title="#{bundle.ViewActivoTitle_idMarca}"/>
+                        <h:outputText value="Proveedor"/>
+                        <h:outputText value="#{activoController.selected.idProveedor.nombre}" title="#{bundle.ViewActivoTitle_idProveedor}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="ActivoViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

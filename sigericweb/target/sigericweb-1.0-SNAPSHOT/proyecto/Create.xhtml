@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="ProyectoCreateDlg" widgetVar="ProyectoCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateProyectoTitle}">
+            <h:form id="ProyectoCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{proyectoController.selected != null}">
+
+                        <p:outputLabel value="#{bundle.CreateProyectoLabel_nombre}" for="nombre" />
+                        <p:inputText id="nombre" value="#{proyectoController.selected.nombre}" title="#{bundle.CreateProyectoTitle_nombre}" required="true" requiredMessage="#{bundle.CreateProyectoRequiredMessage_nombre}"/>
+                        <p:outputLabel value="Cliente" for="usuario1" />
+                        <p:selectOneMenu id="usuario1" value="#{proyectoController.selected.usuarioProyectoCollection}" required="true" requiredMessage="#{bundle.EditUsuarioProyectoRequiredMessage_usuario1}">
+                            <f:selectItems value="#{usuarioController.itemsAvailableSelectOne}"
+                                           var="usuario1Item"
+                                           itemValue="#{usuario1Item}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateProyectoLabel_url}" for="url" />
+                        <p:inputText id="url" value="#{proyectoController.selected.url}" title="#{bundle.CreateProyectoTitle_url}" required="true" requiredMessage="#{bundle.CreateProyectoRequiredMessage_url}"/>
+                        <p:outputLabel value="Estado" for="estado" />
+                        <p:selectOneMenu id="estado" value="#{proyectoController.selected.estado}" required="true" requiredMessage="#{bundle.CreateProyectoRequiredMessage_estado}">
+                                   <f:selectItem itemLabel="Seleccione" itemValue="" />
+                                   <f:selectItem itemLabel="En Progreso" itemValue="1" />
+                                   <f:selectItem itemLabel="Pendiente" itemValue="2" />
+                                   <f:selectItem itemLabel="Revision" itemValue="3" />
+                                   <f:selectItem itemLabel="Completado" itemValue="4" />
+                        </p:selectOneMenu>
+                        <p:outputLabel value="Prioridad" for="prioridad" />
+                        <p:selectOneMenu id="prioridad" value="#{proyectoController.selected.prioridad}" required="true" requiredMessage="#{bundle.CreateProyectoRequiredMessage_prioridad}">
+                                   <f:selectItem itemLabel="Seleccione" itemValue="" />
+                                   <f:selectItem itemLabel="Alto" itemValue="1" />
+                                   <f:selectItem itemLabel="Medio" itemValue="2" />
+                                   <f:selectItem itemLabel="Bajo" itemValue="3" />
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateProyectoLabel_costo}" for="costo" />
+                        <p:inputText id="costo" value="#{proyectoController.selected.costo}" title="#{bundle.CreateProyectoTitle_costo}" required="true" requiredMessage="#{bundle.CreateProyectoRequiredMessage_costo}"/>
+                        <p:outputLabel value="Sesion" for="sesion" />
+                        <p:selectOneMenu id="sesion" value="#{proyectoController.selected.proyectoSesionCollection}" required="true" requiredMessage="#{bundle.EditProyectoSesionRequiredMessage_sesion}">
+                            <f:selectItems value="#{sesionController.itemsAvailableSelectOne}"
+                                           var="sesionItem"
+                                           itemValue="#{sesionItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="Género Musical" for="genero" />
+                        <p:selectOneMenu id="genero" value="#{proyectoController.selected.proyectoGeneroCollection}" required="true" requiredMessage="#{bundle.EditProyectoGeneroRequiredMessage_genero}">
+                            <f:selectItems value="#{generoController.itemsAvailableSelectOne}"
+                                           var="generoItem"
+                                           itemValue="#{generoItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{proyectoController.create}" value="#{bundle.Save}" update="display,:ProyectoListForm:datalist,:growl" oncomplete="handleSubmit(args,'ProyectoCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="ProyectoCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

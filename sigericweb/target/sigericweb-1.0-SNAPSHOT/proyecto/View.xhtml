@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="ProyectoViewDlg" widgetVar="ProyectoViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewProyectoTitle}">
+            <h:form id="ProyectoViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{proyectoController.selected != null}">
+                        <h:outputText value="#{bundle.ViewProyectoLabel_idProyecto}"/>
+                        <h:outputText value="#{proyectoController.selected.idProyecto}" title="#{bundle.ViewProyectoTitle_idProyecto}"/>
+                        <h:outputText value="#{bundle.ViewProyectoLabel_nombre}"/>
+                        <h:outputText value="#{proyectoController.selected.nombre}" title="#{bundle.ViewProyectoTitle_nombre}"/>
+                        <h:outputText value="#{bundle.ViewProyectoLabel_url}"/>
+                        <h:outputText value="#{proyectoController.selected.url}" title="#{bundle.ViewProyectoTitle_url}"/>
+                        <h:outputText value="#{bundle.ViewProyectoLabel_estado}"/>
+                        <h:outputText value="#{proyectoController.selected.estado}" title="#{bundle.ViewProyectoTitle_estado}"/>
+                        <h:outputText value="#{bundle.ViewProyectoLabel_prioridad}"/>
+                        <h:outputText value="#{proyectoController.selected.prioridad}" title="#{bundle.ViewProyectoTitle_prioridad}"/>
+                        <h:outputText value="#{bundle.ViewProyectoLabel_costo}"/>
+                        <h:outputText value="#{proyectoController.selected.costo}" title="#{bundle.ViewProyectoTitle_costo}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="ProyectoViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

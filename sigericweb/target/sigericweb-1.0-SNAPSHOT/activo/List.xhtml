@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="../WEB-INF/template.xhtml">
+
+
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListActivoTitle}"></h:outputText>
+        </ui:define>
+
+        <ui:define name="content">
+            <h:form id="ActivoListForm">
+                <p:panel header="#{bundle.ListActivoTitle}">
+                    <p:dataTable id="datalist" value="#{activoController.items}" var="item"
+                                 selectionMode="single" selection="#{activoController.selected}"
+                                 paginator="true"
+                                 rowKey="#{item.idActivo}"
+                                 rows="10"
+                                 rowsPerPageTemplate="10,20,30,40,50"
+                                 >
+
+                        <p:ajax event="rowSelect"   update="createButton viewButton editButton deleteButton"/>
+                        <p:ajax event="rowUnselect" update="createButton viewButton editButton deleteButton"/>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListActivoTitle_nombre}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nombre}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListActivoTitle_detalle}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.detalle}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Fecha de Compra"/>
+                            </f:facet>
+                            <h:outputText value="#{item.fechaCompra}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Valor de Compra"/>
+                            </f:facet>
+                            <h:outputText value="$#{item.valorCompra}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Valor Residual"/>
+                            </f:facet>
+                            <h:outputText value="$#{item.valorResidual}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Vida Útil"/>
+                            </f:facet>
+                            <h:outputText value="#{item.vidaUtil} Años"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListActivoTitle_estado}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.estado}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Marca"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idMarca.nombre}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Proveedor"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idProveedor.nombre}"/>
+                        </p:column>
+                        <f:facet name="footer">
+                            <p:commandButton id="createButton" icon="ui-icon-plus"   value="Crear" actionListener="#{activoController.prepareCreate}" update=":ActivoCreateForm" oncomplete="PF('ActivoCreateDialog').show()"/>
+                            <p:commandButton id="viewButton"   icon="ui-icon-search" value="Ver Detalles" update=":ActivoViewForm" oncomplete="PF('ActivoViewDialog').show()" disabled="#{empty activoController.selected}"/>
+                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="Editar" update=":ActivoEditForm" oncomplete="PF('ActivoEditDialog').show()" disabled="#{empty activoController.selected}"/>
+                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="Eliminar" actionListener="#{activoController.destroy}" update=":growl,datalist" disabled="#{empty activoController.selected}"/>
+                        </f:facet>
+                    </p:dataTable>
+                </p:panel>
+            </h:form>
+
+            <ui:include src="Create.xhtml"/>
+            <ui:include src="Edit.xhtml"/>
+            <ui:include src="View.xhtml"/>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,74 @@
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:po="http://primefaces.org/omega">
+
+    <div class="sidebar">
+        <div class="nano">
+            <div class="nano-content sidebar-scroll-content">
+                <div class="logo">
+                    <p:graphicImage name="images/Ayzek1_logo2.png" library="omega-layout" />
+                </div>
+
+                <div class="profile">
+                    <a id="profile-button" href="#">
+                        <h:outputText value="#{usuario_nombre}"></h:outputText>
+                        <i class="fa fa-fw fa-cog"></i>
+                    </a>
+                    <ul>
+                        <li><a href="#"><i class="fa fa-fw fa-sliders"></i><span>Account</span></a></li>
+                        <li><a onclick="PF('dlg2').show();"><i class="fa fa-fw fa-sign-out"></i><span>Logout</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="menu">
+                    <po:menu>
+                        
+                        <p:menuitem id="om_db_landing" value="Dashboard" icon="fa fa-columns" outcome="/Dashboard/index"/>
+                        <p:submenu id="om_default1" label="Activos" icon="fa fa-microphone">
+                            <p:menuitem id="actvoslist" value="Gestión de Activos" icon="fa fa-square-o" outcome="/activo/List" />
+                        </p:submenu>
+                       <p:submenu id="om_default2" label="Generos Musicales" icon="fa fa-music">
+                            <p:menuitem id="generosslist" value="Gestión de Géneros Musicales" icon="fa fa-square-o" outcome="/genero/List" />
+                        </p:submenu>
+                        <p:submenu id="om_default3" label="Marcas" icon="fa fa-trademark">
+                            <p:menuitem id="marcaslist" value="Gestion de Marcas" icon="fa fa-square-o" outcome="/marca/List" />
+                        </p:submenu>
+                        <p:submenu id="om_default4" label="Proveedores" icon="fa fa-briefcase">
+                            <p:menuitem id="proveedoreslist" value="Gestión de Proveedores" icon="fa fa-square-o" outcome="/proveedor/List" />
+                        </p:submenu>
+                        <p:submenu id="om_default5" label="Proyectos" icon="fa fa-coffee">
+                            <p:menuitem id="proyectoslist" value="Gestión de Proyectos" icon="fa fa-square-o" outcome="/proyecto/List" />
+                        </p:submenu>
+                        <p:submenu id="om_default6" label="Sesiones" icon="fa fa-calendar">
+                            <p:menuitem id="sesioneslist" value="Gestión de Sesiones" icon="fa fa-square-o" outcome="/sesion/List" />
+                        </p:submenu>
+                        <p:submenu id="om_default7" label="Usuarios" icon="fa fa-user">
+                            <p:menuitem id="usuarioslist" value="Gestión de Usuarios" icon="fa fa-square-o" outcome="/usuario/List" />
+                        </p:submenu>
+                        <p:submenu id="om_default8" label="Reportes" icon="fa fa-copy">
+                            <p:menuitem id="reportes" value="Mis Reportes" icon="fa fa-square-o" outcome="/Reportes/reportes" />
+                            
+                        </p:submenu>
+                    </po:menu>
+                </div>
+            </div>
+        </div>
+    </div>
+<p:dialog header="¿Desea cerrar sesión?" widgetVar="dlg2" modal="true" height="50" width="300" style="text-align: center">
+        <h:form>
+            <div class="ui-g-6 ui-md-16 ui-lg-6">
+                    <p:commandButton id="loginButton" action="#{beanAutenticacion.logout()}" 
+                        value="Si, Salir"  ajax="true" style="text-align: center" >
+                        </p:commandButton>
+                </div>
+                <div class="ui-g-6 ui-md-16 ui-lg-6">
+                    <p:button value="No, Continuar"/>
+                </div>
+        </h:form>        
+        
+            </p:dialog> 
+</ui:composition>

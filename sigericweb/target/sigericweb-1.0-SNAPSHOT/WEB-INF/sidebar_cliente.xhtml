@@ -1,0 +1,48 @@
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:po="http://primefaces.org/omega">
+
+    <div class="sidebar">
+        <div class="nano">
+            <div class="nano-content sidebar-scroll-content">
+                <div class="logo">
+                    <p:graphicImage name="images/Ayzek1_logo2.png" library="omega-layout" />
+                </div>
+
+                <div class="profile">
+                    <a id="profile-button" href="#">
+                        <h:outputText value="#{usuario_nombre}"></h:outputText>
+                        <i class="fa fa-fw fa-cog"></i>
+                    </a>
+                    <ul>
+                        <li><a href="#"><i class="fa fa-fw fa-sliders"></i><span>Account</span></a></li>
+                        <li><a href="#"><i class="fa fa-fw fa-bell"></i><span>Notifications</span><span class="menu-badge">2</span></a></li>
+                        <li><a href="#"><i class="fa fa-fw fa-sign-out"></i><span>Logout</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="menu">
+                    <po:menu>
+                        
+                        <p:menuitem id="om_db_landing" value="Dashboard" icon="fa fa-columns" outcome="/Dashboard/dashboardUsuario"/>
+
+                        <p:submenu id="om_default5" label="Proyectos" icon="fa fa-coffee">
+                            <p:menuitem id="proyectoslist" value="Gestión de Proyectos" icon="fa fa-coffee" outcome="/proyecto/List" />
+                        </p:submenu>
+                        <p:submenu id="om_default6" label="Sesiones" icon="fa fa-calendar">
+                            <p:menuitem id="sesioneslist" value="Gestión de Sesiones" icon="fa fa-calendar" outcome="/sesion/List" />
+                        </p:submenu>
+                        <p:submenu id="om_default7" label="Usuarios" icon="fa fa-user">
+                            <p:menuitem id="usuarioslist" value="Gestionar mi Usuario" icon="fa fa-user" outcome="/usuario/List" />
+                        </p:submenu>
+                    </po:menu>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</ui:composition>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="Project" version="2">
+    <Scope Scope="Faces Configuration Only"/>
+    <Scope Scope="Project">
+        <Node id="marca/Create.xhtml" x="900" y="900" zoom="true"/>
+        <Node id="usuarioSesion/Create.xhtml" x="873" y="689" zoom="true"/>
+        <Node id="welcomePrimefaces.xhtml" x="400" y="450" zoom="true"/>
+        <Node id="usuario/List.xhtml" x="150" y="300" zoom="true"/>
+        <Node id="usuarioProyecto/List.xhtml" x="900" y="600" zoom="true"/>
+        <Node id="usuario/View.xhtml" x="1150" y="150" zoom="true"/>
+        <Node id="usuario/Create.xhtml" x="150" y="1350" zoom="true"/>
+        <Node id="proyectoSesion/Create.xhtml" x="1650" y="600" zoom="true"/>
+        <Node id="usuarioProyecto/Edit.xhtml" x="150" y="900" zoom="true"/>
+        <Node id="usuarioProyecto/View.xhtml" x="650" y="1200" zoom="true"/>
+        <Node id="access.xhtml" x="150" y="150" zoom="true"/>
+        <Node id="proyectoSesion/View.xhtml" x="400" y="750" zoom="true"/>
+        <Node id="sesion/View.xhtml" x="150" y="1050" zoom="true"/>
+        <Node id="activo/Edit.xhtml" x="1400" y="150" zoom="true"/>
+        <Node id="proyectoSesion/List.xhtml" x="150" y="600" zoom="true"/>
+        <Node id="usuario/Edit.xhtml" x="1150" y="450" zoom="true"/>
+        <Node id="login.xhtml" x="900" y="150" zoom="true"/>
+        <Node id="marca/View.xhtml" x="1400" y="450" zoom="true"/>
+        <Node id="proyecto/View.xhtml" x="1400" y="750" zoom="true"/>
+        <Node id="Dashboard/index.xhtml" x="1150" y="750" zoom="true"/>
+        <Node id="loginUsuario.xhtml" x="464" y="58" zoom="true"/>
+        <Node id="proyectoGenero/Create.xhtml" x="1150" y="900" zoom="true"/>
+        <Node id="Dashboard/dashboardUsuario.xhtml" x="789" y="55" zoom="true"/>
+        <Node id="marca/List.xhtml" x="150" y="450" zoom="true"/>
+        <Node id="genero/View.xhtml" x="400" y="1200" zoom="true"/>
+        <Node id="genero/List.xhtml" x="150" y="750" zoom="true"/>
+        <Node id="404.xhtml" x="1650" y="300" zoom="true"/>
+        <Node id="usuarioSesion/View.xhtml" x="1400" y="600" zoom="true"/>
+        <Node id="proveedor/List.xhtml" x="650" y="300" zoom="true"/>
+        <Node id="sesion/Create.xhtml" x="150" y="1200" zoom="true"/>
+        <Node id="landing.xhtml" x="400" y="300" zoom="true"/>
+        <Node id="proyecto/List.xhtml" x="400" y="1350" zoom="true"/>
+        <Node id="proyectoGenero/Edit.xhtml" x="1900" y="150" zoom="true"/>
+        <Node id="proveedor/View.xhtml" x="400" y="150" zoom="true"/>
+        <Node id="usuarioProyecto/Create.xhtml" x="900" y="1050" zoom="true"/>
+        <Node id="proyecto/Create.xhtml" x="2400" y="150" zoom="true"/>
+        <Node id="sesion/List.xhtml" x="650" y="900" zoom="true"/>
+        <Node id="proveedor/Edit.xhtml" x="2150" y="150" zoom="true"/>
+        <Node id="proyectoGenero/List.xhtml" x="900" y="300" zoom="true"/>
+        <Node id="proyectoSesion/Edit.xhtml" x="1650" y="450" zoom="true"/>
+        <Node id="usuarioSesion/Edit.xhtml" x="400" y="600" zoom="true"/>
+        <Node id="genero/Create.xhtml" x="1900" y="450" zoom="true"/>
+        <Node id="empty.xhtml" x="900" y="450" zoom="true"/>
+        <Node id="usuarioSesion/List.xhtml" x="1159" y="645" zoom="true"/>
+        <Node id="proveedor/Create.xhtml" x="1650" y="150" zoom="true"/>
+        <Node id="error.xhtml" x="1150" y="300" zoom="true"/>
+        <Node id="sesion/Edit.xhtml" x="400" y="900" zoom="true"/>
+        <Node id="activo/List.xhtml" x="400" y="1050" zoom="true"/>
+        <Node id="marca/Edit.xhtml" x="650" y="1050" zoom="true"/>
+        <Node id="activo/View.xhtml" x="650" y="600" zoom="true"/>
+        <Node id="proyectoGenero/View.xhtml" x="1400" y="300" zoom="true"/>
+        <Node id="genero/Edit.xhtml" x="650" y="150" zoom="true"/>
+        <Node id="activo/Create.xhtml" x="650" y="750" zoom="true"/>
+        <Node id="proyecto/Edit.xhtml" x="2150" y="300" zoom="true"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations"/>
+</Scene>

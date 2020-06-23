@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <f:facet name="first">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+            <meta name="apple-mobile-web-app-capable" content="yes" />
+        </f:facet>
+        <title>PrimeFaces Omega</title>
+    </h:head>
+
+    <h:body styleClass="login-body">
+    
+        <div id="login-wrapper">
+            <p:graphicImage name="images/login-logo.png" library="omega-layout" />
+            
+            <div id="login-container">
+ <span class="title">SIGERIC</span>
+                <h:form id="loginForm">
+                <div class="ui-g ui-fluid">
+                    <div class="ui-g-12">
+                        <p:inputText id="username" value="#{beanAutenticacion.uname}" required="true" requiredMessage="Debe indicar su correo" 
+                                     placeholder="Usuario" 
+                                     title="Ingrese aquí su Correo"></p:inputText>
+                    </div>
+                    <div class="ui-g-12">
+                        <p:password id="password" value="#{beanAutenticacion.password}" required="true"
+                                    placeholder="Contraseña" feedback="false" 
+                                    requiredMessage="Debe indicar la Clave de Usuario" 
+                                    title="Ingrese aquí su contraseña"></p:password>
+                    </div>
+                    <div class="ui-g-12 ui-md-6">
+                        <span class="remember-me">Recuérdame</span>
+                        <p:selectBooleanCheckbox />
+                    </div>
+                    <div class="ui-g-12 ui-md-6">
+                        <p:link>¿Olvidó su contraseña?</p:link>
+                    </div>
+                    <div class="ui-g-12">
+                        <p:commandButton id="loginButton" action="#{beanAutenticacion.loginProject()}" 
+                        value="Autenticar"  ajax="true" style="text-align: center" >
+                        </p:commandButton>
+                    </div>
+                </div>
+                    </h:form>
+            </div>
+            
+            <div class="login-footer">Ayzek Studio</div>
+        </div>
+        <h:outputStylesheet name="css/layout.css" library="omega-layout" />
+    </h:body>
+
+</html>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="UsuarioProyectoEditDlg" widgetVar="UsuarioProyectoEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditUsuarioProyectoTitle}">
+            <h:form id="UsuarioProyectoEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{usuarioProyectoController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditUsuarioProyectoLabel_usuario1}" for="usuario1" />
+                        <p:selectOneMenu id="usuario1" value="#{usuarioProyectoController.selected.usuario1}" required="true" requiredMessage="#{bundle.EditUsuarioProyectoRequiredMessage_usuario1}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{usuarioController.itemsAvailableSelectOne}"
+                                           var="usuario1Item"
+                                           itemValue="#{usuario1Item}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditUsuarioProyectoLabel_proyecto}" for="proyecto" />
+                        <p:selectOneMenu id="proyecto" value="#{usuarioProyectoController.selected.proyecto}" required="true" requiredMessage="#{bundle.EditUsuarioProyectoRequiredMessage_proyecto}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{proyectoController.itemsAvailableSelectOne}"
+                                           var="proyectoItem"
+                                           itemValue="#{proyectoItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{usuarioProyectoController.update}" value="#{bundle.Save}" update="display,:UsuarioProyectoListForm:datalist,:growl" oncomplete="handleSubmit(args, 'UsuarioProyectoEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="UsuarioProyectoEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

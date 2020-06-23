@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="969986cd-4fab-439e-a4d8-8180e56b8876">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="txtUsuario" class="java.lang.String"/>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="detalle" class="java.lang.String"/>
+	<field name="fechaCompra" class="java.util.Date"/>
+	<field name="valorCompra" class="java.lang.Double"/>
+	<field name="valorResidual" class="java.lang.Double"/>
+	<field name="vidaUtil" class="java.lang.Integer"/>
+	<field name="estado" class="java.lang.String"/>
+	<field name="idMarca" class="java.lang.Object"/>
+	<field name="idProveedor" class="java.lang.Object"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="90" y="0" width="371" height="79" uuid="5ab61f9b-a791-4388-8a6a-e1f4865d4136"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="36"/>
+				</textElement>
+				<text><![CDATA[Listado Activos]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="38" splitType="Stretch">
+			<textField>
+				<reportElement x="190" y="18" width="100" height="20" uuid="d4ede7e7-60f0-432a-9fe5-d7a813511d18"/>
+				<textFieldExpression><![CDATA[$P{txtUsuario}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="90" y="18" width="100" height="20" uuid="da4501e4-ae7c-4544-9f99-e046d08e90a0"/>
+				<text><![CDATA[Impreso por:]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="ec1cbfc0-0129-4c3f-bb66-1bbec59c42b7"/>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="0" width="100" height="20" uuid="e6e7caa6-371e-47f2-a1ed-75ec6e95c4d2"/>
+				<text><![CDATA[Detalle]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="0" width="100" height="20" uuid="6f95db78-58da-44c7-9be6-21e40b2407e6"/>
+				<text><![CDATA[Fecha de Compra]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="0" width="72" height="20" uuid="85bef7dc-d70e-4b5d-8bb7-bd5adda87c12"/>
+				<text><![CDATA[Vida Util]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="372" y="0" width="100" height="20" uuid="ad576917-27ec-471b-bcb8-f8840eb52f25"/>
+				<text><![CDATA[Estado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="472" y="0" width="83" height="20" uuid="c9611283-b2c3-410a-b94c-8607138fad91"/>
+				<text><![CDATA[Marca]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="100" y="0" width="100" height="20" uuid="5ebfbbaa-d96f-4691-a6fe-8383e172cfa4"/>
+				<textFieldExpression><![CDATA[$F{detalle}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="0" width="100" height="20" uuid="3769731d-3111-4174-8efd-63ed2dbaa507"/>
+				<textFieldExpression><![CDATA[$F{fechaCompra}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="472" y="0" width="83" height="20" uuid="049fcda0-230c-40e8-9abd-71901bccf6f8"/>
+				<textFieldExpression><![CDATA[""+$F{idMarca}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="0" width="72" height="20" uuid="604fbc63-79ef-4c26-9313-d3f1b1b8298d"/>
+				<textFieldExpression><![CDATA[$F{vidaUtil}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="b4a28259-2195-4d1b-9ed7-673121ff1b34"/>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="372" y="0" width="100" height="20" uuid="3388a642-d3b0-43b9-9d57-650281719f55"/>
+				<textFieldExpression><![CDATA[$F{estado}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

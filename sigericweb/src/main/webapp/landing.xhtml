@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <f:facet name="first">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+            <meta name="apple-mobile-web-app-capable" content="yes" />
+        </f:facet>
+        <title>Ayzek Studio</title>
+        <script type="text/javascript">
+        $(function() {
+            $('#menu-button').on('click', function(e) {
+                $('#menu').toggleClass('overlay-menu');
+                e.preventDefault();
+            });
+        });
+        </script>
+        <!-- GetButton.io widget -->
+        <script type="text/javascript">
+        (function () {
+        var options = {
+            facebook: "429414390540253", // Facebook page ID
+            call_to_action: "¿Dudas?¿Opiniones?", // Call to action
+            position: "right", // Position may be 'right' or 'left'
+        };
+        var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+        s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+        })();
+        </script>
+<!-- /GetButton.io widget -->
+        <ui:insert name="head"/>
+    </h:head>
+
+    <h:body styleClass="landing-body">
+       <div id="fb-root"></div>
+        <div class="landing-wrapper">
+            <div class="landing-header">
+                <div class="landing-header-content clearfix">
+                    <p:graphicImage name="images/logo.png" library="omega-layout" />
+                    
+                    <a id="menu-button" href="#">
+                        <span class="fa fa-bars"></span>
+                    </a>
+                    <ul id="menu">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#features">Ventajas</a></li>
+                        <li><a href="#mobile">SIGERIC</a></li>
+                        <li><a href="#pricing">Precios</a></li>
+                        <li><a href="#video">Proyectos</a></li>
+                        <li><a href="#location">Visítanos</a></li>
+                        <p:linkButton outcome="Login/loginUsuario" value="Inicia Sesion" style="margin-right:20px;"/>
+                    </ul>
+                </div>
+            </div>
+            
+            <div id="introduction">
+                <div class="introduction-content">
+                    <span class="title">Ayzek Studio</span>
+                    <span class="subtitle">De músicos, para músicos</span>
+                    <p:graphicImage name="images/landing/Ayzek_Logo.png" library="omega-layout" />
+                </div>
+            </div>
+            
+            <div id="features">
+                <div class="features-content">
+                    <span class="feature-title">Ventajas de Ayzek</span>
+                    <p>Esto es lo que nos caracteriza.</p>
+                        
+                    <div class="ui-g">
+                        <div class="ui-g-12 ui-md-4">
+                            <p:graphicImage name="images/landing/section2_1.png" library="omega-layout" styleClass="feature-icon"/>
+                            <span class="feature-text">
+                                <span> 100% Comprometidos</span>
+                                <p>Hacemos todo lo posible para que su experiencia sea única.</p>
+                            </span>
+                        </div>
+                        <div class="ui-g-12 ui-md-4">
+                            <p:graphicImage name="images/landing/section2_2.png" library="omega-layout" styleClass="feature-icon"/>
+                            <span class="feature-text">
+                                <span>Modernos</span>
+                                <p>Buscamos las mas nuevas tecnologías para hacer de su proyecto algo único.</p>
+                            </span>
+                        </div>
+                        <div class="ui-g-12 ui-md-4">
+                            <p:graphicImage name="images/landing/section2_3.png" library="omega-layout" styleClass="feature-icon"/>
+                            <span class="feature-text">
+                                <span>Responsables</span>
+                                <p>Cumplimos los mejores estándares para tener sus proyectos a tiempo.</p>
+                            </span>
+                        </div>
+                        <div class="ui-g-12 ui-md-4">
+                            <p:graphicImage name="images/landing/section2_4.png" library="omega-layout" styleClass="feature-icon"/>
+                            <span class="feature-text">
+                                <span>Creativos</span>
+                                <p>Estamos en constante evolución para ofrecerle lo mejor del mercado.</p>
+                            </span>
+                        </div>
+                        <div class="ui-g-12 ui-md-4">
+                            <p:graphicImage name="images/landing/section2_5.png" library="omega-layout" styleClass="feature-icon"/>
+                            <span class="feature-text">
+                                <span>Conocimiento</span>
+                                <p>Tenemos más de 6 años en el mercado que respaldan nuestro esfuerzo.</p>
+                            </span>
+                        </div>
+                        <div class="ui-g-12 ui-md-4">
+                            <p:graphicImage name="images/landing/section2_6.png" library="omega-layout" styleClass="feature-icon"/>
+                            <span class="feature-text">
+                                <span>Aliados</span>
+                                <p>Hacemos nuestro su proyecto!.</p>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="mobile">
+                <div class="mobile-content">
+                    <span class="title">¡Prueba nuestra aplicación SIGERIC!</span>
+                    <span class="subtitle">Gestione su proyecto en un mismo lugar.</span>
+                    <p:graphicImage name="images/landing/section3_mobile.png" library="omega-layout" />
+                    <p:commandButton value="Inicia Sesion" type="button" onclick="PF('dlg2').show();" />
+                </div>
+            </div>
+            <p:dialog header="Regístrate" widgetVar="dlg2" modal="true" height="100">
+             <h:outputText value="Próximamente nuestro sistema estará 100% para usted"/>
+             <br></br>
+             <h:outputText value="Revísa nuestras redes sociales para estár siempre informado"/>
+             <br></br>
+             <br></br>
+            <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fayzekstudio" width="450" height="35" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe> 
+            </p:dialog>   
+ 
+            
+            <div id="pricing">
+                <div class="pricing-content">
+                    <span class="pricing-title">Nuestros Servicios</span>
+                    <p>Ofrecemos varias lineas de producto acordes a los estándares más modernos 
+                    a un precio justo para brindarle valor a su inversión</p>
+                        
+                    <div class="ui-g">
+                        <div class="ui-g-12 ui-md-4">
+                            <div class="pricing-basic pricing-box">
+                                <span class="pricing-name">Grabaciones</span>
+                                <div class="pricing-fee">$20</div>
+                                
+                                <p>Costo mínimo por hora</p>
+                                <p>Instrumentos ilimitados</p>
+                                <p>Sin límite de tiempo</p>
+                                <p>Canciones ilimitadas</p>
+                            </div>
+                        </div>
+                        
+                        <div class="ui-g-12 ui-md-4">
+                            <div class="pricing-standard pricing-box">
+                                <span class="pricing-name">Producción Audiovisual</span>
+                                <div class="pricing-fee">$250</div>
+                                
+                                <p>Nos ajustamos a su presupuesto</p>
+                                <p>Múltiples cámaras</p>
+                                <p>Videos on Demand</p>
+                                <p>Canales Multimedia</p>
+                            </div>
+                        </div>
+                        
+                        <div class="ui-g-12 ui-md-4">
+                            <div class="pricing-professional pricing-box">
+                                <span class="pricing-name">Asesoría Professional</span>
+                                <div class="pricing-fee">$50</div>
+                                <p>Asesorías de proyectos</p>
+                                <p>Registro en ACAM</p>
+                                <p>Registro de propiedad intelectual</p>
+                                <p>Proyección social</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="video">
+                <div class="video-content">
+                    <span class="video-title">Nuestros Proyectos</span>
+                    <p>Un poco de nuestros proyectos realizados.</p>
+                    <div class="video-container">
+                    <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/285565739"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/ayzekstudio" title="Ayzek Studio" target="_blank" style="color: #cccccc; text-decoration: none;">Ayzek Studio</a></div>
+                    </div>
+                </div>
+            </div>
+            <div id="location">
+              <div id="video">
+                  <div class="video-content">
+                      <span class="video-title">Visítanos</span>
+                  </div>
+                  <br></br> 
+                  <br></br> 
+                  
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.504209869831!2d-84.06895068520664!3d9.891896992925359!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e2fda9989c69%3A0xe4fae4b4b0e65ec7!2sAyzek%20Studio!5e0!3m2!1ses-419!2scr!4v1592006480163!5m2!1ses-419!2scr" width="100%" height="500" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                  
+                  </div>
+                </div>
+          
+            <div class="landing-footer">
+                <div class="landing-footer-content">
+                    <div class="footer-top">
+                        <div class="ui-g">
+                            <div class="ui-g-6">
+                                <p:graphicImage name="images/logo.png" library="omega-layout" />
+                                <p>Derechos Reservados, 2020</p>
+                                <br></br>
+                                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fayzekstudio%2F" width="340" height="300" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                            </div>
+                            <div class="ui-g-6">
+                                <ul>
+                                    <li><a href="#mobile">SIGERIC</a></li>
+                                    <li><a href="#pricing">Precio</a></li>
+                                    <li><a href="#video">Proyectos</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="#">Home</a></li>
+
+                                    <li><a href="#features">Ventajas</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-bottom">
+                        SIGERIC es una marca registrada perteneciente a Ayzek Studio
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h:outputStylesheet name="css/layout.css" library="omega-layout" />
+    </h:body>
+    <style>
+        html{
+         scroll-behavior: smooth;   
+        }
+    </style>
+</html>
